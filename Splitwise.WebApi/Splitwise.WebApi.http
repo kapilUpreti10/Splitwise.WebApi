@@ -1,0 +1,6 @@
+@Splitwise.WebApi_HostAddress = http://localhost:5120
+
+GET {{Splitwise.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

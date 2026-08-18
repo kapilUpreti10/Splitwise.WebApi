@@ -1,0 +1,41 @@
+# =========================
+# Node / Frontend (React/Tailwind)
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Tailwind build output
+output.css
+dist/
+build/
+*.css.map
+
+# Vite / frontend build tools
+.vite/
+.parcel-cache/
+
+# =========================
+# .NET / ASP.NET Core
+# =========================
+bin/
+obj/
+wwwroot/lib/
+wwwroot/css/site.min.css
+
+# User secrets
+appsettings.Development.json
+appsettings.Production.json
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# =========================
+# Environment files
+# =========================
+.env
+.env.*
