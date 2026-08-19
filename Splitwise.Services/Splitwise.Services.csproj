@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="16.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Splitwise.Contracts\Splitwise.Contracts.csproj" />
+    <ProjectReference Include="..\Splitwise.DataAccess\Splitwise.DataAccess.csproj" />
+    <ProjectReference Include="..\Splitwise.Utils\Splitwise.Utils.csproj" />
+  </ItemGroup>
+
 </Project>
