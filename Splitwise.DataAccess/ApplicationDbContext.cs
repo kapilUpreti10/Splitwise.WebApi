@@ -28,8 +28,12 @@ namespace Splitwise.DataAccess
             base.OnModelCreating(builder);
 
             UserSeed.Seed(builder);
+            builder.Entity<GroupMember>()
+    .HasIndex(gm => new { gm.GroupId, gm.UserId })
+    .IsUnique();
             GroupSeed.Seed(builder);
             ExpenseSeed.Seed(builder);
+            ExpenseSplitSeed.Seed(builder);
             
         }
     }

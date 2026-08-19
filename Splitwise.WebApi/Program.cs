@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Splitwise.DataAccess;
 using Splitwise.Models;
+using Splitwise.Utils;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,5 +38,15 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+
+// generating hash pas 
+
+
+Console.WriteLine(PasswordHashGenerator.Generate("kapil@example.com"));
+Console.WriteLine(PasswordHashGenerator.Generate("niraj@example.com"));
+Console.WriteLine(PasswordHashGenerator.Generate("pratap@example.com"));
+Console.WriteLine(PasswordHashGenerator.Generate("pariskar@example.com"));
+Console.WriteLine(PasswordHashGenerator.Generate("parbat@example.com"));
 
 app.Run();

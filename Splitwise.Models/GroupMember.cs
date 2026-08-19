@@ -1,22 +1,21 @@
-﻿
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-
-
-    namespace Splitwise.Models
+namespace Splitwise.Models
+{
+    public class GroupMember
     {
-        public class  GroupMember
-        {
+        [Key]
+        public int Id { get; set; }
 
-        // as by default the id created from identity is of type string 
         public string UserId { get; set; } = string.Empty;
 
-            public ApplicationUser? User { get; set; }
+        [ForeignKey(nameof(UserId))]
+        public ApplicationUser? User { get; set; }
 
-            public int GroupId { get; set; }
+        public int GroupId { get; set; }
 
-            public Group? Group { get; set; }
-
-
-        
-        }
+        [ForeignKey(nameof(GroupId))]
+        public Group? Group { get; set; }
     }
+}

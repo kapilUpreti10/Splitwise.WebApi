@@ -11,7 +11,10 @@ namespace Splitwise.Models
     {
 
         [Key]
-        public Guid Id { get; set; } = Guid.NewGuid();
+        //public Guid Id { get; set; } = Guid.NewGuid(); 
+        // we cannot write Guid.NewGuid() here it is dynamic and while adding seed data this class will also be used so 
+
+        public Guid Id { get; set; }
 
         public int ExpenseId { get; set; }
 
@@ -25,7 +28,7 @@ namespace Splitwise.Models
 
         public ApplicationUser? User { get; set; }
 
-        [Req]
+        [Required]
         public decimal IndivudialAmount { get; set; }
 
 
