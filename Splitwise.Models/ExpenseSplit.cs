@@ -25,7 +25,7 @@ namespace Splitwise.Models
 
         public ApplicationUser? User { get; set; }
 
-        [Required]
+        [Req]
         public decimal IndivudialAmount { get; set; }
 
 

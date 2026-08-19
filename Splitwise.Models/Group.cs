@@ -1,45 +1,45 @@
 ﻿
 
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using Splitwise.Models;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using Splitwise.Models;
 
 
-namespace Splitwise.Models
-{
-    public class Group
+    namespace Splitwise.Models
     {
+        public class Group
+        {
+
+            //[Required]
+            // since int is already non nullable so making it required adds nothing 
+
+            [Key]
+            public int Id { get; set; }
+
+            [Required]
+            public string Name { get; set; } = string.Empty;
+
+
+            public string? Description { get; set; }
 
         //[Required]
-        // since int is already non nullable so making it required adds nothing 
+        public string CreatedBy { get; set; } = string.Empty;
 
-        [Key]
-        public int Id { get; set; }
-
-        [Required]
-        public string Name { get; set; } = string.Empty;
+            [ForeignKey(nameof(CreatedBy))]
+            // this is for navigation property 
 
 
-        public string? Description { get; set; }
-
-        //[Required]
-        public int CreatedBy { get; set; }
-
-        [ForeignKey(nameof(CreatedBy))]
-        // this is for navigation property 
+            public ApplicationUser? CreatedByUser { get; set; }
 
 
-        public ApplicationUser? CreatedByUser { get; set; }
-
-
-        public DateTime CreatedAt { get; set; }
+            public DateTime CreatedAt { get; set; }
 
 
 
 
 
-        public ICollection<GroupMember> GroupMembers = new List<GroupMember>();
+            public ICollection<GroupMember> GroupMembers = new List<GroupMember>();
 
         
+        }
     }
-}

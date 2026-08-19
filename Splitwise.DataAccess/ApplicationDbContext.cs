@@ -1,11 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Splitwise.DataAccess.Seed;
+using Splitwise.DataAccess.SeedData;
 using Splitwise.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Splitwise.DataAccess
 {
@@ -21,5 +19,18 @@ namespace Splitwise.DataAccess
         public DbSet<Expense>Expenses { get; set; }
 
         public DbSet<ExpenseSplit> ExpenseSplits { get; set; }
+
+
+        //adding basic seed data to the database 
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            UserSeed.Seed(builder);
+            GroupSeed.Seed(builder);
+            ExpenseSeed.Seed(builder);
+            
+        }
     }
 }
