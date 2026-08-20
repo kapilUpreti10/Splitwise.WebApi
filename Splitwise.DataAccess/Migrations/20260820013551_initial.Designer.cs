@@ -12,8 +12,8 @@ using Splitwise.DataAccess;
 namespace Splitwise.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260819150422_seed data added")]
-    partial class seeddataadded
+    [Migration("20260820013551_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -228,103 +228,6 @@ namespace Splitwise.DataAccess.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "user-001",
-                            AccessFailedCount = 0,
-                            Address = "Kathmandu",
-                            ConcurrencyStamp = "1512eabe-235c-433e-b287-761ee0c5a28b",
-                            CreatedAt = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "kapil@example.com",
-                            EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            Name = "Kapil Upreti",
-                            NormalizedEmail = "KAPIL@EXAMPLE.COM",
-                            NormalizedUserName = "KAPIL",
-                            PasswordHash = "AQAAAAIAAYagAAAAEAZx6oWb1/m9EvmbWMcQZvQYteRtB4w2AqiaNoqO+Eqfc2x/mpr1Mk1S0A3OOxza0g==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "95299416-9b52-4b57-a37f-34ac81381e48",
-                            TwoFactorEnabled = false,
-                            UserName = "kapil"
-                        },
-                        new
-                        {
-                            Id = "user-002",
-                            AccessFailedCount = 0,
-                            Address = "Mahendranagar",
-                            ConcurrencyStamp = "107fe632-36ed-4fee-8e72-fb888348be53",
-                            CreatedAt = new DateTime(2026, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "niraj@example.com",
-                            EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            Name = "Niraj Karki",
-                            NormalizedEmail = "NIRAJ@EXAMPLE.COM",
-                            NormalizedUserName = "NIRAJ",
-                            PasswordHash = "AQAAAAIAAYagAAAAEKbVcYcgbeTr5H12+wl7GsK3jhMTYnvxt7NYbGgSJRvbVbvvHJsgm29TLgKCkWarXw==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "53b87d9e-35d2-498d-bcaf-74d22e012697",
-                            TwoFactorEnabled = false,
-                            UserName = "Niraj"
-                        },
-                        new
-                        {
-                            Id = "user-003",
-                            AccessFailedCount = 0,
-                            Address = "Argakhanchi",
-                            ConcurrencyStamp = "357cf08c-84e1-4eab-8e1a-d4fff92e676c",
-                            CreatedAt = new DateTime(2026, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "pratap@example.com",
-                            EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            Name = "Pratap Kunwar",
-                            NormalizedEmail = "PRATAP@EXAMPLE.COM",
-                            NormalizedUserName = "PRATAP",
-                            PasswordHash = "AQAAAAIAAYagAAAAEMVeU+XMblpEyNLe8wlsQwvZiR1twdlvhi//vM1XVb2eaRfX0uF8H3ti0NYsvHwRTA==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "498d5057-5246-4f46-ac8a-7c561315ab94",
-                            TwoFactorEnabled = false,
-                            UserName = "Pratap"
-                        },
-                        new
-                        {
-                            Id = "user-004",
-                            AccessFailedCount = 0,
-                            Address = "Butwal",
-                            ConcurrencyStamp = "64cc9e98-e6a5-4eb8-8fa7-b41e05b7dcba",
-                            CreatedAt = new DateTime(2026, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "pariskar@example.com",
-                            EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            Name = "Pariskar Poudel",
-                            NormalizedEmail = "PARISKAR@EXAMPLE.COM",
-                            NormalizedUserName = "PARISKAR",
-                            PasswordHash = "AQAAAAIAAYagAAAAEPKhSgXj7sWfG0Iqhy++5f6LUicpWcMJuFGbRVWtBGajmFsUWZyJRDna4fuwEaDn5A==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "7afe7901-74fb-4943-8bf5-d145a512d138",
-                            TwoFactorEnabled = false,
-                            UserName = "Pariskar"
-                        },
-                        new
-                        {
-                            Id = "user-005",
-                            AccessFailedCount = 0,
-                            Address = "Dang",
-                            ConcurrencyStamp = "018c0627-8ff3-4f83-963e-e983a5c07444",
-                            CreatedAt = new DateTime(2026, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "parbat@example.com",
-                            EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            Name = "Parbat Pandey",
-                            NormalizedEmail = "PARBAT@EXAMPLE.COM",
-                            NormalizedUserName = "PARBAT",
-                            PasswordHash = "AQAAAAIAAYagAAAAEDc2EU4wGZbdZLQxbpdxc8HwLQV7u0foLPO71WpCv190whBUZnLAC01feheDq3RcRA==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "d0413c9f-3ddd-4c26-b091-43fe17806ef3",
-                            TwoFactorEnabled = false,
-                            UserName = "Parbat"
-                        });
                 });
 
             modelBuilder.Entity("Splitwise.Models.Expense", b =>
@@ -355,24 +258,6 @@ namespace Splitwise.DataAccess.Migrations
                     b.HasIndex("PaidBy");
 
                     b.ToTable("Expenses");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedAt = new DateTime(2026, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            GroupId = 1,
-                            PaidBy = "user-001",
-                            TotalAmount = 1500m
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedAt = new DateTime(2026, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            GroupId = 1,
-                            PaidBy = "user-002",
-                            TotalAmount = 2000m
-                        });
                 });
 
             modelBuilder.Entity("Splitwise.Models.ExpenseSplit", b =>
@@ -398,64 +283,6 @@ namespace Splitwise.DataAccess.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("ExpenseSplits");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("10000000-0000-0000-0000-000000000001"),
-                            ExpenseId = 1,
-                            IndivudialAmount = 500m,
-                            UserId = "user-005"
-                        },
-                        new
-                        {
-                            Id = new Guid("10000000-0000-0000-0000-000000000002"),
-                            ExpenseId = 1,
-                            IndivudialAmount = 200m,
-                            UserId = "user-002"
-                        },
-                        new
-                        {
-                            Id = new Guid("10000000-0000-0000-0000-000000000003"),
-                            ExpenseId = 1,
-                            IndivudialAmount = 500m,
-                            UserId = "user-003"
-                        },
-                        new
-                        {
-                            Id = new Guid("10000000-0000-0000-0000-000000000004"),
-                            ExpenseId = 1,
-                            IndivudialAmount = 300m,
-                            UserId = "user-004"
-                        },
-                        new
-                        {
-                            Id = new Guid("20000000-0000-0000-0000-000000000001"),
-                            ExpenseId = 2,
-                            IndivudialAmount = 400m,
-                            UserId = "user-001"
-                        },
-                        new
-                        {
-                            Id = new Guid("20000000-0000-0000-0000-000000000002"),
-                            ExpenseId = 2,
-                            IndivudialAmount = 400m,
-                            UserId = "user-002"
-                        },
-                        new
-                        {
-                            Id = new Guid("20000000-0000-0000-0000-000000000004"),
-                            ExpenseId = 2,
-                            IndivudialAmount = 800m,
-                            UserId = "user-004"
-                        },
-                        new
-                        {
-                            Id = new Guid("20000000-0000-0000-0000-000000000005"),
-                            ExpenseId = 2,
-                            IndivudialAmount = 400m,
-                            UserId = "user-005"
-                        });
                 });
 
             modelBuilder.Entity("Splitwise.Models.Group", b =>
@@ -485,16 +312,6 @@ namespace Splitwise.DataAccess.Migrations
                     b.HasIndex("CreatedBy");
 
                     b.ToTable("Groups");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedAt = new DateTime(2026, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedBy = "user-001",
-                            Description = "entrepreneurship friday class may 30",
-                            Name = "Khimchi"
-                        });
                 });
 
             modelBuilder.Entity("Splitwise.Models.GroupMember", b =>
@@ -514,10 +331,9 @@ namespace Splitwise.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("GroupId");
 
-                    b.HasIndex("GroupId", "UserId")
-                        .IsUnique();
+                    b.HasIndex("UserId");
 
                     b.ToTable("GroupMembers");
                 });

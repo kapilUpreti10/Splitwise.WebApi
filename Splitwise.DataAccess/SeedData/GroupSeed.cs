@@ -14,7 +14,7 @@ namespace Splitwise.DataAccess.Seed
                     Name = "Khimchi",
                     Description = "entrepreneurship friday class may 30",
                     CreatedBy = "user-001",
-                    CreatedAt = new DateTime(2026, 1, 10)
+                    CreatedAt = new DateTime(2026, 1, 10, 0, 0, 0, DateTimeKind.Utc)
                 }
             );
         }

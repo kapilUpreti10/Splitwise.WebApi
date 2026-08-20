@@ -24,8 +24,10 @@
                     EmailConfirmed = true,
                     Name = "Kapil Upreti",
                     Address = "Kathmandu",
-                    CreatedAt = new DateTime(2026, 1, 1),
-                    PasswordHash= "AQAAAAIAAYagAAAAEAZx6oWb1/m9EvmbWMcQZvQYteRtB4w2AqiaNoqO+Eqfc2x/mpr1Mk1S0A3OOxza0g=="
+                    CreatedAt = new DateTime(2026, 1, 1,0,0,0,DateTimeKind.Utc),
+                    PasswordHash= "AQAAAAIAAYagAAAAEAZx6oWb1/m9EvmbWMcQZvQYteRtB4w2AqiaNoqO+Eqfc2x/mpr1Mk1S0A3OOxza0g==",
+                    SecurityStamp = "security-stamp-user-001",
+                    ConcurrencyStamp = "concurrency-stamp-user-001"
 
                 };
 
@@ -39,8 +41,10 @@
                     EmailConfirmed = true,
                     Name = "Niraj Karki",
                     Address = "Mahendranagar",
-                    CreatedAt = new DateTime(2026, 1, 2),
-                    PasswordHash= "AQAAAAIAAYagAAAAEKbVcYcgbeTr5H12+wl7GsK3jhMTYnvxt7NYbGgSJRvbVbvvHJsgm29TLgKCkWarXw=="
+                    CreatedAt = new DateTime(2026, 1, 2,0,0,0,DateTimeKind.Utc),
+                    PasswordHash= "AQAAAAIAAYagAAAAEKbVcYcgbeTr5H12+wl7GsK3jhMTYnvxt7NYbGgSJRvbVbvvHJsgm29TLgKCkWarXw==",
+                    SecurityStamp = "security-stamp-user-002",
+                    ConcurrencyStamp = "concurrency-stamp-user-002"
 
                 };
                 var user3 = new ApplicationUser
@@ -53,8 +57,10 @@
                     EmailConfirmed = true,
                     Name = "Pratap Kunwar",
                     Address = "Argakhanchi",
-                    CreatedAt = new DateTime(2026, 1, 3),
-                    PasswordHash= "AQAAAAIAAYagAAAAEMVeU+XMblpEyNLe8wlsQwvZiR1twdlvhi//vM1XVb2eaRfX0uF8H3ti0NYsvHwRTA=="
+                    CreatedAt = new DateTime(2026, 1, 3,0,0,0,DateTimeKind.Utc),
+                    PasswordHash= "AQAAAAIAAYagAAAAEMVeU+XMblpEyNLe8wlsQwvZiR1twdlvhi//vM1XVb2eaRfX0uF8H3ti0NYsvHwRTA==",
+                    SecurityStamp = "security-stamp-user-003",
+                    ConcurrencyStamp = "concurrency-stamp-user-003"
 
                 };
                 var user4 = new ApplicationUser
@@ -67,8 +73,14 @@
                     EmailConfirmed = true,
                     Name = "Pariskar Poudel",
                     Address = "Butwal",
-                    CreatedAt = new DateTime(2026, 1, 3),
-                    PasswordHash= "AQAAAAIAAYagAAAAEPKhSgXj7sWfG0Iqhy++5f6LUicpWcMJuFGbRVWtBGajmFsUWZyJRDna4fuwEaDn5A=="
+                    CreatedAt = new DateTime(2026, 1, 3,0,0,0,DateTimeKind.Utc),
+                    PasswordHash= "AQAAAAIAAYagAAAAEPKhSgXj7sWfG0Iqhy++5f6LUicpWcMJuFGbRVWtBGajmFsUWZyJRDna4fuwEaDn5A==",
+
+                    // we should add this to get rid of error as since it is guid type and each time migration is created different type of guid 
+                    // will be generated so it detects data has changed eventhough we havent so we have to give fix value 
+
+                    SecurityStamp = "security-stamp-user-004",
+                    ConcurrencyStamp = "concurrency-stamp-user-004"
 
                 };
                 var user5 = new ApplicationUser
@@ -81,8 +93,10 @@
                     EmailConfirmed = true,
                     Name = "Parbat Pandey",
                     Address = "Dang",
-                    CreatedAt = new DateTime(2026, 1, 3),
-                    PasswordHash= "AQAAAAIAAYagAAAAEDc2EU4wGZbdZLQxbpdxc8HwLQV7u0foLPO71WpCv190whBUZnLAC01feheDq3RcRA=="
+                    CreatedAt = new DateTime(2026, 1, 3,0,0,0,DateTimeKind.Utc),
+                    PasswordHash= "AQAAAAIAAYagAAAAEDc2EU4wGZbdZLQxbpdxc8HwLQV7u0foLPO71WpCv190whBUZnLAC01feheDq3RcRA==",
+                    SecurityStamp = "security-stamp-user-005",
+                    ConcurrencyStamp = "concurrency-stamp-user-005"
                 };
 
                 //user1.PasswordHash = passwordHasher.HashPassword(user1, "kapil@example.com");

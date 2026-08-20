@@ -14,7 +14,7 @@ namespace Splitwise.DataAccess.Seed
                     GroupId = 1,
                     PaidBy = "user-001",
                     TotalAmount = 1500,
-                    CreatedAt = new DateTime(2026, 2, 1)
+                    CreatedAt = new DateTime(2026, 2, 1,0,0,0,DateTimeKind.Utc)
                 },
 
                 new Expense
@@ -23,7 +23,7 @@ namespace Splitwise.DataAccess.Seed
                     GroupId = 1,
                     PaidBy = "user-002",
                     TotalAmount = 2000,
-                    CreatedAt = new DateTime(2026, 2, 5)
+                    CreatedAt = new DateTime(2026, 2, 5,0,0,0,DateTimeKind.Utc)
                 }
 
             );

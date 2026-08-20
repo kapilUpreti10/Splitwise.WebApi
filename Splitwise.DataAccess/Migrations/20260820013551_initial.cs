@@ -4,12 +4,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
-
 namespace Splitwise.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class seeddataadded : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -264,47 +262,6 @@ namespace Splitwise.DataAccess.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.InsertData(
-                table: "AspNetUsers",
-                columns: new[] { "Id", "AccessFailedCount", "Address", "ConcurrencyStamp", "CreatedAt", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[,]
-                {
-                    { "user-001", 0, "Kathmandu", "1512eabe-235c-433e-b287-761ee0c5a28b", new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "kapil@example.com", true, false, null, "Kapil Upreti", "KAPIL@EXAMPLE.COM", "KAPIL", "AQAAAAIAAYagAAAAEAZx6oWb1/m9EvmbWMcQZvQYteRtB4w2AqiaNoqO+Eqfc2x/mpr1Mk1S0A3OOxza0g==", null, false, "95299416-9b52-4b57-a37f-34ac81381e48", false, "kapil" },
-                    { "user-002", 0, "Mahendranagar", "107fe632-36ed-4fee-8e72-fb888348be53", new DateTime(2026, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "niraj@example.com", true, false, null, "Niraj Karki", "NIRAJ@EXAMPLE.COM", "NIRAJ", "AQAAAAIAAYagAAAAEKbVcYcgbeTr5H12+wl7GsK3jhMTYnvxt7NYbGgSJRvbVbvvHJsgm29TLgKCkWarXw==", null, false, "53b87d9e-35d2-498d-bcaf-74d22e012697", false, "Niraj" },
-                    { "user-003", 0, "Argakhanchi", "357cf08c-84e1-4eab-8e1a-d4fff92e676c", new DateTime(2026, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), "pratap@example.com", true, false, null, "Pratap Kunwar", "PRATAP@EXAMPLE.COM", "PRATAP", "AQAAAAIAAYagAAAAEMVeU+XMblpEyNLe8wlsQwvZiR1twdlvhi//vM1XVb2eaRfX0uF8H3ti0NYsvHwRTA==", null, false, "498d5057-5246-4f46-ac8a-7c561315ab94", false, "Pratap" },
-                    { "user-004", 0, "Butwal", "64cc9e98-e6a5-4eb8-8fa7-b41e05b7dcba", new DateTime(2026, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), "pariskar@example.com", true, false, null, "Pariskar Poudel", "PARISKAR@EXAMPLE.COM", "PARISKAR", "AQAAAAIAAYagAAAAEPKhSgXj7sWfG0Iqhy++5f6LUicpWcMJuFGbRVWtBGajmFsUWZyJRDna4fuwEaDn5A==", null, false, "7afe7901-74fb-4943-8bf5-d145a512d138", false, "Pariskar" },
-                    { "user-005", 0, "Dang", "018c0627-8ff3-4f83-963e-e983a5c07444", new DateTime(2026, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), "parbat@example.com", true, false, null, "Parbat Pandey", "PARBAT@EXAMPLE.COM", "PARBAT", "AQAAAAIAAYagAAAAEDc2EU4wGZbdZLQxbpdxc8HwLQV7u0foLPO71WpCv190whBUZnLAC01feheDq3RcRA==", null, false, "d0413c9f-3ddd-4c26-b091-43fe17806ef3", false, "Parbat" }
-                });
-
-            migrationBuilder.InsertData(
-                table: "Groups",
-                columns: new[] { "Id", "CreatedAt", "CreatedBy", "Description", "Name" },
-                values: new object[] { 1, new DateTime(2026, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "user-001", "entrepreneurship friday class may 30", "Khimchi" });
-
-            migrationBuilder.InsertData(
-                table: "Expenses",
-                columns: new[] { "Id", "CreatedAt", "GroupId", "PaidBy", "TotalAmount" },
-                values: new object[,]
-                {
-                    { 1, new DateTime(2026, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, "user-001", 1500m },
-                    { 2, new DateTime(2026, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, "user-002", 2000m }
-                });
-
-            migrationBuilder.InsertData(
-                table: "ExpenseSplits",
-                columns: new[] { "Id", "ExpenseId", "IndivudialAmount", "UserId" },
-                values: new object[,]
-                {
-                    { new Guid("10000000-0000-0000-0000-000000000001"), 1, 500m, "user-005" },
-                    { new Guid("10000000-0000-0000-0000-000000000002"), 1, 200m, "user-002" },
-                    { new Guid("10000000-0000-0000-0000-000000000003"), 1, 500m, "user-003" },
-                    { new Guid("10000000-0000-0000-0000-000000000004"), 1, 300m, "user-004" },
-                    { new Guid("20000000-0000-0000-0000-000000000001"), 2, 400m, "user-001" },
-                    { new Guid("20000000-0000-0000-0000-000000000002"), 2, 400m, "user-002" },
-                    { new Guid("20000000-0000-0000-0000-000000000004"), 2, 800m, "user-004" },
-                    { new Guid("20000000-0000-0000-0000-000000000005"), 2, 400m, "user-005" }
-                });
-
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -363,10 +320,9 @@ namespace Splitwise.DataAccess.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_GroupMembers_GroupId_UserId",
+                name: "IX_GroupMembers_GroupId",
                 table: "GroupMembers",
-                columns: new[] { "GroupId", "UserId" },
-                unique: true);
+                column: "GroupId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_GroupMembers_UserId",
