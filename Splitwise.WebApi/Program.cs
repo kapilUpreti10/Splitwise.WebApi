@@ -2,7 +2,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Splitwise.DataAccess;
 using Splitwise.Models;
-using Splitwise.Utils;
+using Splitwise.Services;
+using Splitwise.Services.Interfaces;
+using Splitwise.WebApi.Startup;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,14 +19,21 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
-// aspnet core identity
-
+// ASP.NET Core Identity
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
-     
+
+// Application services (interface -> implementation)
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IGroupService, GroupService>();
+builder.Services.AddScoped<IExpenseService, ExpenseService>();
+builder.Services.AddScoped<IBalanceService, BalanceService>();
 
 var app = builder.Build();
+
+// Make sure "User" / "Admin" roles exist before anything tries to use [Authorize(Roles = ...)].
+await RoleSeeder.SeedAsync(app);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -34,19 +43,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseAuthentication();
-
 app.UseAuthorization();
 
 app.MapControllers();
-
-
-// generating hash pas 
-
-
-Console.WriteLine(PasswordHashGenerator.Generate("kapil@example.com"));
-Console.WriteLine(PasswordHashGenerator.Generate("niraj@example.com"));
-Console.WriteLine(PasswordHashGenerator.Generate("pratap@example.com"));
-Console.WriteLine(PasswordHashGenerator.Generate("pariskar@example.com"));
-Console.WriteLine(PasswordHashGenerator.Generate("parbat@example.com"));
 
 app.Run();
