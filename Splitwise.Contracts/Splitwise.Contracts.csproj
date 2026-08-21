@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Splitwise.Models\Splitwise.Models.csproj" />
+    <ProjectReference Include="..\Splitwise.Utils\Splitwise.Utils.csproj" />
   </ItemGroup>
 
   <ItemGroup>
