@@ -17,5 +17,9 @@ namespace Splitwise.Contracts.DTOs.Groups
 
         // Optional additional members to add at creation time (creator is always added).
         public List<string>? MemberUserIds { get; set; }
+
+        // here since application user ma we use aspent user identity so its id is of type 
+        //string so here we user string type for user id and not int or guid
     }
 }
+ 

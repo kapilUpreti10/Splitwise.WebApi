@@ -33,6 +33,8 @@ builder.Services.AddScoped<IBalanceService, BalanceService>();
 var app = builder.Build();
 
 // Make sure "User" / "Admin" roles exist before anything tries to use [Authorize(Roles = ...)].
+
+/// since db operation so we are using await
 await RoleSeeder.SeedAsync(app);
 
 // Configure the HTTP request pipeline.

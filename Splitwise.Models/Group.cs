@@ -37,8 +37,8 @@
 
 
 
-
-            public ICollection<GroupMember> GroupMembers = new List<GroupMember>();
+        // this is also navigation property which is used to get the list of group members for this group
+        public ICollection<GroupMember> GroupMembers = new List<GroupMember>();
 
         
         }
