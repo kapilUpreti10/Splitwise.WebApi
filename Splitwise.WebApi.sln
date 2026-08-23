@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.37411.7 d17.14
+VisualStudioVersion = 17.14.37411.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Splitwise.WebApi", "Splitwise.WebApi\Splitwise.WebApi.csproj", "{71019BC1-C886-486B-B30F-050F15ADCD21}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Splitwise.Models", "Splitwise.Models\Splitwise.Models.csproj", "{9D8F4DE8-8CA2-4088-8153-7FBF43F0B568}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Splitwise.Utils", "Splitwise.Utils\Splitwise.Utils.csproj", "{F8A68DAF-AFE4-400C-BCF8-CAD7F4EFAE0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Splitwise.Test", "Splitwise.Test\Splitwise.Test.csproj", "{A67BFFA8-AA01-416C-BEA5-DABD016CAE6C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{F8A68DAF-AFE4-400C-BCF8-CAD7F4EFAE0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8A68DAF-AFE4-400C-BCF8-CAD7F4EFAE0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8A68DAF-AFE4-400C-BCF8-CAD7F4EFAE0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A67BFFA8-AA01-416C-BEA5-DABD016CAE6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A67BFFA8-AA01-416C-BEA5-DABD016CAE6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A67BFFA8-AA01-416C-BEA5-DABD016CAE6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A67BFFA8-AA01-416C-BEA5-DABD016CAE6C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

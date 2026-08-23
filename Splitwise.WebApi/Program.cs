@@ -61,10 +61,16 @@ builder.Services.AddAuthentication(options =>
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 })
+
+    // upto now we have said to system use Jwt Bearer token for authentication and 
+    // now below we will tell system hwo to validate whether it is valid jwt token or not 
 .AddJwtBearer(options =>
 {
     options.TokenValidationParameters = new TokenValidationParameters
     {
+        // we are configuring jwt authentication handler 
+        // dont trust the jwt someone sends vaidate all using this parameter
+
         ValidateIssuer = true,
         ValidIssuer = jwtSection["Issuer"],
 
@@ -103,6 +109,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// this middleware actually intercepts the incoming jwt token from frontend and validates it acc to what we have added in 
+// addAuthentication()
 app.UseAuthentication();
 app.UseAuthorization();
 
