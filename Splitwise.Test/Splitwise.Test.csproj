@@ -21,8 +21,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Services\" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Splitwise.WebApi\Splitwise.WebApi.csproj" />
+    <ProjectReference Include="..\Splitwise.Services\Splitwise.Services.csproj" />
+    <ProjectReference Include="..\Splitwise.Contracts\Splitwise.Contracts.csproj" />
+    <ProjectReference Include="..\Splitwise.Models\Splitwise.Models.csproj" />
+    <ProjectReference Include="..\Splitwise.Utils\Splitwise.Utils.csproj" />
+    <ProjectReference Include="..\Splitwise.DataAccess\Splitwise.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>
